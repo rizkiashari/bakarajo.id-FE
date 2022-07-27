@@ -4,7 +4,7 @@ import React from 'react';
 const Beranda = () => {
   return (
     <View>
-      <Text>Beranda Baru</Text>
+      <Text>Beranda</Text>
     </View>
   );
 };
