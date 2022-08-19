@@ -11,6 +11,7 @@ import {
   TersimpanInActive,
 } from '../../assets';
 import { colors } from '../../utils/colors';
+import { fonts } from '../../utils/fonts';
 
 const TabItem = ({ title, active, onPress, onLongPress }) => {
   const Icon = () => {
@@ -63,8 +64,9 @@ export default TabItem;
 const styles = StyleSheet.create({
   container: { alignItems: 'center' },
   text: (active) => ({
-    fontSize: 13,
+    fontSize: 12,
     color: active ? colors.black : colors.gray,
     marginTop: 8,
+    fontFamily: fonts.primary[400],
   }),
 });
