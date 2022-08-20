@@ -26,12 +26,20 @@ const Masuk = () => {
         <VStack space={6}>
           <VStack space={5} justifyContent="center" alignItems="center">
             <Center w="64" h="48" bg="gray.200" rounded="md" shadow={3} />
-            <Text fontFamily={fonts.primary[700]} fontSize="2xl">
+            <Text
+              fontFamily={fonts.primary[700]}
+              color={colors.black}
+              fontSize="2xl"
+            >
               Masuk
             </Text>
           </VStack>
           <VStack space={2}>
-            <Text fontFamily={fonts.primary[700]} fontSize="md">
+            <Text
+              fontFamily={fonts.primary[700]}
+              color={colors.black}
+              fontSize="md"
+            >
               Alamat Email
             </Text>
             <Input
@@ -47,7 +55,11 @@ const Masuk = () => {
             />
           </VStack>
           <VStack space={2}>
-            <Text fontFamily={fonts.primary[700]} fontSize="md">
+            <Text
+              fontFamily={fonts.primary[700]}
+              color={colors.black}
+              fontSize="md"
+            >
               Kata Sandi
             </Text>
             <Box position="relative">
