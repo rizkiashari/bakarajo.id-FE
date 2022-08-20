@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Beranda, Masuk, Profile, Review, Tersimpan } from '../pages';
+import { Beranda, BuatAkun, Masuk, Profile, Review, Tersimpan } from '../pages';
 import BottomNavigator from '../components/molecules/BottomNavigator';
 import PilihPeran from '../pages/PilihPeran';
 
@@ -38,7 +38,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="PilihPeran">
+    <Stack.Navigator initialRouteName="BuatAkun">
       <Stack.Screen
         name="MainApp"
         component={MainApp}
@@ -52,6 +52,11 @@ const Router = () => {
       <Stack.Screen
         name="PilihPeran"
         component={PilihPeran}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="BuatAkun"
+        component={BuatAkun}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

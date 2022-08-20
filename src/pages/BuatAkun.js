@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import { Dimensions, TouchableOpacity, StyleSheet } from 'react-native';
 import {
-  Box,
-  Divider,
-  Center,
-  HStack,
-  Input,
+  Dimensions,
   ScrollView,
-  Text,
-  VStack,
-} from 'native-base';
-import { colors } from '../utils/colors';
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import { Box, Divider, HStack, Input, Text, VStack } from 'native-base';
 import { fonts } from '../utils/fonts';
+import { colors } from '../utils/colors';
 import { HidePassword, ShowPassword } from '../assets';
 
-const Masuk = () => {
+const BuatAkun = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showKonfirm, setShowKonfirm] = useState(false);
 
   const dimensiWidth = Dimensions.get('window').width;
   // const dimensiHeight = Dimensions.get('window').height;
@@ -23,16 +20,42 @@ const Masuk = () => {
   return (
     <ScrollView>
       <Box pt="12" px="6" pb="5" h="100%" maxHeight="full">
-        <VStack space={6}>
-          <VStack space={5} justifyContent="center" alignItems="center">
-            <Center w="64" h="48" bg="gray.200" rounded="md" shadow={3} />
+        <VStack space={7} width="full">
+          <VStack justifyContent="center" alignItems="center">
+            <Text
+              fontFamily={fonts.primary[700]}
+              mb="20px"
+              textAlign="center"
+              fontSize="xl"
+            >
+              Buat Akun
+            </Text>
+            <Box
+              width="20"
+              height="20"
+              rounded="full"
+              bgColor={colors.gray[655]}
+            />
+          </VStack>
+          <VStack space={2}>
             <Text
               fontFamily={fonts.primary[700]}
               color={colors.black}
-              fontSize="2xl"
+              fontSize="md"
             >
-              Masuk
+              Nama Lengkap
             </Text>
+            <Input
+              placeholder="Masukkan nama lengkap"
+              rounded={8}
+              px="4"
+              fontFamily={fonts.primary[700]}
+              type="text"
+              backgroundColor={colors.white}
+              py="2"
+              fontSize={13}
+              w="100%"
+            />
           </VStack>
           <VStack space={2}>
             <Text
@@ -91,15 +114,57 @@ const Masuk = () => {
               )}
             </Box>
           </VStack>
-          <VStack space={5} alignItems="center" justifyContent="center">
-            <TouchableOpacity style={styles.btnSignIn}>
+          <VStack space={2}>
+            <Text
+              fontFamily={fonts.primary[700]}
+              color={colors.black}
+              fontSize="md"
+            >
+              Konfirmasi Kata Sandi
+            </Text>
+            <Box position="relative">
+              <Input
+                placeholder="Ulangi kata sandi"
+                rounded={8}
+                px="4"
+                fontFamily={fonts.primary[700]}
+                type={showKonfirm ? 'text' : 'password'}
+                backgroundColor={colors.white}
+                py="2"
+                fontSize={13}
+                w="100%"
+              />
+              {showKonfirm ? (
+                <TouchableOpacity
+                  style={styles.actionPassword}
+                  onPress={() => setShowKonfirm(!showKonfirm)}
+                >
+                  <ShowPassword />
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity
+                  style={styles.actionPassword}
+                  onPress={() => setShowKonfirm(!showKonfirm)}
+                >
+                  <HidePassword />
+                </TouchableOpacity>
+              )}
+            </Box>
+          </VStack>
+          <VStack
+            space={5}
+            alignItems="center"
+            justifyContent="center"
+            width="full"
+          >
+            <TouchableOpacity style={styles.btnSignUp}>
               <Text
                 fontFamily={fonts.primary[700]}
                 color={colors.white}
                 fontSize="sm"
                 textAlign="center"
               >
-                Masuk
+                Buat Akun
               </Text>
             </TouchableOpacity>
             <Text fontFamily={fonts.primary[700]} fontSize="xs">
@@ -118,14 +183,14 @@ const Masuk = () => {
               </Text>
               <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
             </HStack>
-            <TouchableOpacity style={styles.btnSignUp}>
+            <TouchableOpacity style={styles.btnSignIn}>
               <Text
                 fontFamily={fonts.primary[700]}
                 color={colors.black}
                 fontSize="sm"
                 textAlign="center"
               >
-                Buat Akun
+                Masuk
               </Text>
             </TouchableOpacity>
           </VStack>
@@ -135,27 +200,27 @@ const Masuk = () => {
   );
 };
 
-export default Masuk;
+export default BuatAkun;
 
 const styles = StyleSheet.create({
-  btnSignUp: {
+  actionPassword: {
+    position: 'absolute',
+    right: 12,
+    top: 15,
+  },
+  btnSignIn: {
     width: '100%',
     borderColor: colors.black,
     borderWidth: 1,
     borderRadius: 8,
     paddingVertical: 8,
   },
-  btnSignIn: {
+  btnSignUp: {
     width: '100%',
     backgroundColor: colors.black,
 
     borderWidth: 1,
     borderRadius: 8,
     paddingVertical: 8,
-  },
-  actionPassword: {
-    position: 'absolute',
-    right: 12,
-    top: 15,
   },
 });
