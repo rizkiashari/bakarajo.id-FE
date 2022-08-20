@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Beranda, Masuk, Profile, Review, Tersimpan } from '../pages';
 import BottomNavigator from '../components/molecules/BottomNavigator';
+import PilihPeran from '../pages/PilihPeran';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -37,7 +38,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Masuk">
+    <Stack.Navigator initialRouteName="PilihPeran">
       <Stack.Screen
         name="MainApp"
         component={MainApp}
@@ -46,6 +47,11 @@ const Router = () => {
       <Stack.Screen
         name="Masuk"
         component={Masuk}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PilihPeran"
+        component={PilihPeran}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
