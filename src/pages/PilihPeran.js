@@ -19,11 +19,11 @@ const PilihPeran = () => {
       </Text>
       <VStack space={8} mb="52px">
         <Box height={32}>
-          <TouchableOpacity onPress={() => setStatusPeran('pencariKerja')}>
+          <TouchableOpacity onPress={() => setStatusPeran('PencariKerja')}>
             <HStack
               space={4}
               bgColor={
-                statusPeran === 'pencariKerja' ? colors.black : colors.white
+                statusPeran === 'PencariKerja' ? colors.black : colors.white
               }
               rounded="8"
               padding="16px"
@@ -41,7 +41,7 @@ const PilihPeran = () => {
                   fontFamily={fonts.primary[400]}
                   fontSize="xs"
                   color={
-                    statusPeran === 'pencariKerja'
+                    statusPeran === 'PencariKerja'
                       ? colors.white
                       : colors.gray[650]
                   }
@@ -52,7 +52,7 @@ const PilihPeran = () => {
                   fontFamily={fonts.primary[400]}
                   fontSize="xs"
                   color={
-                    statusPeran === 'pencariKerja'
+                    statusPeran === 'PencariKerja'
                       ? colors.white
                       : colors.gray[650]
                   }
@@ -64,11 +64,11 @@ const PilihPeran = () => {
           </TouchableOpacity>
         </Box>
         <Box height={32}>
-          <TouchableOpacity onPress={() => setStatusPeran('penyediaKerja')}>
+          <TouchableOpacity onPress={() => setStatusPeran('PenyediaKerja')}>
             <HStack
               space={4}
               bgColor={
-                statusPeran === 'penyediaKerja' ? colors.black : colors.white
+                statusPeran === 'PenyediaKerja' ? colors.black : colors.white
               }
               rounded="8"
               height={32}
@@ -86,7 +86,7 @@ const PilihPeran = () => {
                   fontFamily={fonts.primary[400]}
                   fontSize="xs"
                   color={
-                    statusPeran === 'penyediaKerja'
+                    statusPeran === 'PenyediaKerja'
                       ? colors.white
                       : colors.gray[650]
                   }
@@ -97,7 +97,7 @@ const PilihPeran = () => {
                   fontFamily={fonts.primary[400]}
                   fontSize="xs"
                   color={
-                    statusPeran === 'penyediaKerja'
+                    statusPeran === 'PenyediaKerja'
                       ? colors.white
                       : colors.gray[650]
                   }
