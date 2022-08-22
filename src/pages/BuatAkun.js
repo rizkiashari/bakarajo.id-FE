@@ -5,7 +5,16 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Box, Divider, HStack, Input, Text, VStack } from 'native-base';
+import {
+  Box,
+  Center,
+  Container,
+  Divider,
+  HStack,
+  Input,
+  Text,
+  VStack,
+} from 'native-base';
 import { fonts } from '../utils/fonts';
 import { colors } from '../utils/colors';
 import { HidePassword, ShowPassword } from '../assets';
@@ -19,183 +28,187 @@ const BuatAkun = () => {
 
   return (
     <ScrollView>
-      <Box pt="12" px="6" pb="5" h="100%" maxHeight="full">
-        <VStack space={7} width="full">
-          <VStack justifyContent="center" alignItems="center">
-            <Text
-              fontFamily={fonts.primary[700]}
-              mb="20px"
-              textAlign="center"
-              fontSize="xl"
-            >
-              Buat Akun
-            </Text>
-            <Box
-              width="20"
-              height="20"
-              rounded="full"
-              bgColor={colors.gray[655]}
-            />
-          </VStack>
-          <VStack space={2}>
-            <Text
-              fontFamily={fonts.primary[700]}
-              color={colors.black}
-              fontSize="md"
-            >
-              Nama Lengkap
-            </Text>
-            <Input
-              placeholder="Masukkan nama lengkap"
-              rounded={8}
-              px="4"
-              fontFamily={fonts.primary[700]}
-              type="text"
-              backgroundColor={colors.white}
-              py="2"
-              fontSize={13}
-              w="100%"
-            />
-          </VStack>
-          <VStack space={2}>
-            <Text
-              fontFamily={fonts.primary[700]}
-              color={colors.black}
-              fontSize="md"
-            >
-              Alamat Email
-            </Text>
-            <Input
-              placeholder="Masukkan alamat email"
-              rounded={8}
-              px="4"
-              fontFamily={fonts.primary[700]}
-              type="email"
-              backgroundColor={colors.white}
-              py="2"
-              fontSize={13}
-              w="100%"
-            />
-          </VStack>
-          <VStack space={2}>
-            <Text
-              fontFamily={fonts.primary[700]}
-              color={colors.black}
-              fontSize="md"
-            >
-              Kata Sandi
-            </Text>
-            <Box position="relative">
-              <Input
-                placeholder="Masukkan kata sandi"
-                rounded={8}
-                px="4"
-                fontFamily={fonts.primary[700]}
-                type={showPassword ? 'text' : 'password'}
-                backgroundColor={colors.white}
-                py="2"
-                fontSize={13}
-                w="100%"
-              />
-              {showPassword ? (
-                <TouchableOpacity
-                  style={styles.actionPassword}
-                  onPress={() => setShowPassword(!showPassword)}
+      <Center>
+        <Container centerContent={true}>
+          <Box pt="12" pb="5" h="100%" maxHeight="full">
+            <VStack space={7} width="full">
+              <VStack justifyContent="center" alignItems="center">
+                <Text
+                  fontFamily={fonts.primary[700]}
+                  mb="20px"
+                  textAlign="center"
+                  fontSize="xl"
                 >
-                  <ShowPassword />
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity
-                  style={styles.actionPassword}
-                  onPress={() => setShowPassword(!showPassword)}
+                  Buat Akun
+                </Text>
+                <Box
+                  width="20"
+                  height="20"
+                  rounded="full"
+                  bgColor={colors.gray[655]}
+                />
+              </VStack>
+              <VStack space={2}>
+                <Text
+                  fontFamily={fonts.primary[700]}
+                  color={colors.black}
+                  fontSize="md"
                 >
-                  <HidePassword />
-                </TouchableOpacity>
-              )}
-            </Box>
-          </VStack>
-          <VStack space={2}>
-            <Text
-              fontFamily={fonts.primary[700]}
-              color={colors.black}
-              fontSize="md"
-            >
-              Konfirmasi Kata Sandi
-            </Text>
-            <Box position="relative">
-              <Input
-                placeholder="Ulangi kata sandi"
-                rounded={8}
-                px="4"
-                fontFamily={fonts.primary[700]}
-                type={showKonfirm ? 'text' : 'password'}
-                backgroundColor={colors.white}
-                py="2"
-                fontSize={13}
-                w="100%"
-              />
-              {showKonfirm ? (
-                <TouchableOpacity
-                  style={styles.actionPassword}
-                  onPress={() => setShowKonfirm(!showKonfirm)}
+                  Nama Lengkap
+                </Text>
+                <Input
+                  placeholder="Masukkan nama lengkap"
+                  rounded={8}
+                  px="4"
+                  fontFamily={fonts.primary[700]}
+                  type="text"
+                  backgroundColor={colors.white}
+                  py="2"
+                  fontSize={13}
+                  w="100%"
+                />
+              </VStack>
+              <VStack space={2}>
+                <Text
+                  fontFamily={fonts.primary[700]}
+                  color={colors.black}
+                  fontSize="md"
                 >
-                  <ShowPassword />
-                </TouchableOpacity>
-              ) : (
-                <TouchableOpacity
-                  style={styles.actionPassword}
-                  onPress={() => setShowKonfirm(!showKonfirm)}
+                  Alamat Email
+                </Text>
+                <Input
+                  placeholder="Masukkan alamat email"
+                  rounded={8}
+                  px="4"
+                  fontFamily={fonts.primary[700]}
+                  type="email"
+                  backgroundColor={colors.white}
+                  py="2"
+                  fontSize={13}
+                  w="100%"
+                />
+              </VStack>
+              <VStack space={2}>
+                <Text
+                  fontFamily={fonts.primary[700]}
+                  color={colors.black}
+                  fontSize="md"
                 >
-                  <HidePassword />
-                </TouchableOpacity>
-              )}
-            </Box>
-          </VStack>
-          <VStack
-            space={5}
-            alignItems="center"
-            justifyContent="center"
-            width="full"
-          >
-            <TouchableOpacity style={styles.btnSignUp}>
-              <Text
-                fontFamily={fonts.primary[700]}
-                color={colors.white}
-                fontSize="sm"
-                textAlign="center"
+                  Kata Sandi
+                </Text>
+                <Box position="relative">
+                  <Input
+                    placeholder="Masukkan kata sandi"
+                    rounded={8}
+                    px="4"
+                    fontFamily={fonts.primary[700]}
+                    type={showPassword ? 'text' : 'password'}
+                    backgroundColor={colors.white}
+                    py="2"
+                    fontSize={13}
+                    w="100%"
+                  />
+                  {showPassword ? (
+                    <TouchableOpacity
+                      style={styles.actionPassword}
+                      onPress={() => setShowPassword(!showPassword)}
+                    >
+                      <ShowPassword />
+                    </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity
+                      style={styles.actionPassword}
+                      onPress={() => setShowPassword(!showPassword)}
+                    >
+                      <HidePassword />
+                    </TouchableOpacity>
+                  )}
+                </Box>
+              </VStack>
+              <VStack space={2}>
+                <Text
+                  fontFamily={fonts.primary[700]}
+                  color={colors.black}
+                  fontSize="md"
+                >
+                  Konfirmasi Kata Sandi
+                </Text>
+                <Box position="relative">
+                  <Input
+                    placeholder="Ulangi kata sandi"
+                    rounded={8}
+                    px="4"
+                    fontFamily={fonts.primary[700]}
+                    type={showKonfirm ? 'text' : 'password'}
+                    backgroundColor={colors.white}
+                    py="2"
+                    fontSize={13}
+                    w="100%"
+                  />
+                  {showKonfirm ? (
+                    <TouchableOpacity
+                      style={styles.actionPassword}
+                      onPress={() => setShowKonfirm(!showKonfirm)}
+                    >
+                      <ShowPassword />
+                    </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity
+                      style={styles.actionPassword}
+                      onPress={() => setShowKonfirm(!showKonfirm)}
+                    >
+                      <HidePassword />
+                    </TouchableOpacity>
+                  )}
+                </Box>
+              </VStack>
+              <VStack
+                space={5}
+                alignItems="center"
+                justifyContent="center"
+                width="full"
               >
-                Buat Akun
-              </Text>
-            </TouchableOpacity>
-            <Text fontFamily={fonts.primary[700]} fontSize="xs">
-              Lupa kata sandi? Klik di sini
-            </Text>
-            <HStack space={6} alignItems="center" justifyContent="center">
-              <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
-              <Text
-                fontFamily={fonts.primary[700]}
-                color={colors.gray[750]}
-                fontSize="xs"
-                textAlign="center"
-                width={dimensiWidth / 7}
-              >
-                atau
-              </Text>
-              <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
-            </HStack>
-            <TouchableOpacity style={styles.btnSignIn}>
-              <Text
-                fontFamily={fonts.primary[700]}
-                color={colors.black}
-                fontSize="sm"
-                textAlign="center"
-              >
-                Masuk
-              </Text>
-            </TouchableOpacity>
-          </VStack>
-        </VStack>
-      </Box>
+                <TouchableOpacity style={styles.btnSignUp}>
+                  <Text
+                    fontFamily={fonts.primary[700]}
+                    color={colors.white}
+                    fontSize="sm"
+                    textAlign="center"
+                  >
+                    Buat Akun
+                  </Text>
+                </TouchableOpacity>
+                <Text fontFamily={fonts.primary[700]} fontSize="xs">
+                  Lupa kata sandi? Klik di sini
+                </Text>
+                <HStack space={6} alignItems="center" justifyContent="center">
+                  <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
+                  <Text
+                    fontFamily={fonts.primary[700]}
+                    color={colors.gray[750]}
+                    fontSize="xs"
+                    textAlign="center"
+                    width={dimensiWidth / 7}
+                  >
+                    atau
+                  </Text>
+                  <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
+                </HStack>
+                <TouchableOpacity style={styles.btnSignIn}>
+                  <Text
+                    fontFamily={fonts.primary[700]}
+                    color={colors.black}
+                    fontSize="sm"
+                    textAlign="center"
+                  >
+                    Masuk
+                  </Text>
+                </TouchableOpacity>
+              </VStack>
+            </VStack>
+          </Box>
+        </Container>
+      </Center>
     </ScrollView>
   );
 };
