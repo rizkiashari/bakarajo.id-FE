@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
   container: { alignItems: 'center' },
   text: (active) => ({
     fontSize: 12,
-    color: active ? colors.black : colors.gray,
+    color: active ? colors.black : colors.gray[650],
     marginTop: 8,
-    fontFamily: fonts.primary[400],
+    fontFamily: fonts.primary[500],
   }),
 });

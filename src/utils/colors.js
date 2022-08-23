@@ -1,6 +1,7 @@
 const mainColors = {
   black: '#000000',
   white: '#ffffff',
+  primary: '#181A1F',
   gray: {
     100: '#FAFAFA',
     150: '#EEEEEE',
@@ -12,6 +13,7 @@ const mainColors = {
 };
 
 export const colors = {
+  primary: mainColors.primary,
   black: mainColors.black,
   white: mainColors.white,
   gray: {

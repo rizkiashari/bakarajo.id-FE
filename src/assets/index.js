@@ -8,7 +8,10 @@ import ProfileInActive from './icon/profile_inactive.svg';
 import ReviewActive from './icon/review_active.svg';
 import ReviewInActive from './icon/review_inactive.svg';
 import ShowPassword from './icon/show_password.svg';
-import HidePassword from './icon/hide-password.svg';
+import HidePassword from './icon/hide_password.svg';
+import SearchBlack from './icon/icon_search_black.svg';
+import Notification from './icon/icon_notif.svg';
+import SavedIcon from './icon/icon_save.svg';
 
 // ILustration
 
@@ -23,4 +26,7 @@ export {
   ReviewInActive,
   ShowPassword,
   HidePassword,
+  SearchBlack,
+  Notification,
+  SavedIcon,
 };
