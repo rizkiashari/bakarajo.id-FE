@@ -4,8 +4,9 @@ import { Box, HStack, Text, VStack, ScrollView } from 'native-base';
 import { colors } from '../utils/colors';
 import { fonts } from '../utils/fonts';
 import { Notification, SavedIcon, SearchBlack } from '../assets';
+import { CardPekerjaan } from '../components';
 
-const Beranda = () => {
+const Beranda = ({ navigation }) => {
   const widthDimensii = Dimensions.get('window').width;
 
   return (
@@ -28,7 +29,7 @@ const Beranda = () => {
             </Text>
           </HStack>
           <HStack space={4} justifyContent="flex-end" alignItems="center">
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SearchPage')}>
               <SearchBlack />
             </TouchableOpacity>
             <TouchableOpacity>
@@ -37,7 +38,7 @@ const Beranda = () => {
           </HStack>
         </HStack>
       </Box>
-      <ScrollView width="full">
+      <ScrollView width="full" showsVerticalScrollIndicator={false}>
         <Box px={4} mt={2} mb={4}>
           <Text
             fontFamily={fonts.primary[800]}
@@ -212,136 +213,9 @@ const Beranda = () => {
           </TouchableOpacity>
         </HStack>
         <VStack mb={4} px={4} space={5}>
-          <TouchableOpacity>
-            <Box rounded="lg" p="4" bg="white" width="full">
-              <VStack space={8}>
-                <HStack justifyContent="space-between">
-                  <HStack space={3}>
-                    <Box bg="gray.300" width={12} height={12} rounded="full" />
-                    <VStack>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.primary}
-                        fontSize={16}
-                      >
-                        Jenis Pekerjaan
-                      </Text>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.gray[650]}
-                        fontSize={12}
-                      >
-                        Company
-                      </Text>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.gray[650]}
-                        fontSize={12}
-                      >
-                        Jakarta, Indonesia
-                      </Text>
-                    </VStack>
-                  </HStack>
-                  <TouchableOpacity>
-                    <SavedIcon width="26" />
-                  </TouchableOpacity>
-                </HStack>
-                <VStack space={2}>
-                  <Text
-                    fontFamily={fonts.primary[600]}
-                    color={colors.primary}
-                    fontSize={16}
-                  >
-                    Jenis Pekerjaan
-                  </Text>
-                  <HStack justifyContent="space-between" alignItems="center">
-                    <Box
-                      bgColor="blueGray.200"
-                      px="3"
-                      py="1"
-                      rounded="full"
-                      fontSize={12}
-                      fontFamily={fonts.primary[600]}
-                    >
-                      RP 1.000.000/bulan
-                    </Box>
-                    <Text
-                      color={colors.primary}
-                      fontSize={14}
-                      fontFamily={fonts.primary.normal}
-                    >
-                      5 min ago
-                    </Text>
-                  </HStack>
-                </VStack>
-              </VStack>
-            </Box>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Box rounded="lg" p="4" bg="white" width="full">
-              <VStack space={8}>
-                <HStack justifyContent="space-between">
-                  <HStack space={3}>
-                    <Box bg="gray.300" width={12} height={12} rounded="full" />
-                    <VStack>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.primary}
-                        fontSize={16}
-                      >
-                        Jenis Pekerjaan
-                      </Text>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.gray[650]}
-                        fontSize={12}
-                      >
-                        Company
-                      </Text>
-                      <Text
-                        fontFamily={fonts.primary[600]}
-                        color={colors.gray[650]}
-                        fontSize={12}
-                      >
-                        Jakarta, Indonesia
-                      </Text>
-                    </VStack>
-                  </HStack>
-                  <TouchableOpacity>
-                    <SavedIcon width="26" />
-                  </TouchableOpacity>
-                </HStack>
-                <VStack space={2}>
-                  <Text
-                    fontFamily={fonts.primary[600]}
-                    color={colors.primary}
-                    fontSize={16}
-                  >
-                    Jenis Pekerjaan
-                  </Text>
-                  <HStack justifyContent="space-between" alignItems="center">
-                    <Box
-                      bgColor="blueGray.200"
-                      px="3"
-                      py="1"
-                      rounded="full"
-                      fontSize={12}
-                      fontFamily={fonts.primary[600]}
-                    >
-                      RP 1.000.000/bulan
-                    </Box>
-                    <Text
-                      color={colors.primary}
-                      fontSize={14}
-                      fontFamily={fonts.primary.normal}
-                    >
-                      5 min ago
-                    </Text>
-                  </HStack>
-                </VStack>
-              </VStack>
-            </Box>
-          </TouchableOpacity>
+          <CardPekerjaan />
+          <CardPekerjaan />
+          <CardPekerjaan />
         </VStack>
       </ScrollView>
     </>

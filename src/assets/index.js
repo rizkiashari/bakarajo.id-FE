@@ -10,8 +10,10 @@ import ReviewInActive from './icon/review_inactive.svg';
 import ShowPassword from './icon/show_password.svg';
 import HidePassword from './icon/hide_password.svg';
 import SearchBlack from './icon/icon_search_black.svg';
+import SearchGrey from './icon/icon_search_grey.svg';
 import Notification from './icon/icon_notif.svg';
 import SavedIcon from './icon/icon_save.svg';
+import BackIcon from './icon/icon_back.svg';
 
 // ILustration
 
@@ -29,4 +31,6 @@ export {
   SearchBlack,
   Notification,
   SavedIcon,
+  BackIcon,
+  SearchGrey,
 };
