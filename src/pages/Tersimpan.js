@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Header } from '../components';
 
-const Tersimpan = () => {
+const Tersimpan = ({ navigation }) => {
   return (
-    <View>
-      <Text>Tersimpan</Text>
-    </View>
+    <>
+      <Header navigation={navigation} title="Tersimpan" />
+    </>
   );
 };
 

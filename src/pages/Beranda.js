@@ -3,41 +3,15 @@ import { Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 import { Box, HStack, Text, VStack, ScrollView } from 'native-base';
 import { colors } from '../utils/colors';
 import { fonts } from '../utils/fonts';
-import { Notification, SavedIcon, SearchBlack } from '../assets';
-import { CardPekerjaan } from '../components';
+import { SavedIcon } from '../assets';
+import { CardPekerjaan, Header } from '../components';
 
 const Beranda = ({ navigation }) => {
   const widthDimensii = Dimensions.get('window').width;
 
   return (
     <>
-      <Box safeAreaTop bgColor={colors.white} width="full" px="16px" py="12px">
-        <HStack justifyContent="space-between" alignItems="center">
-          <HStack space={4} alignItems="center" width="2/3">
-            <Box
-              bgColor={colors.gray[655]}
-              width={10}
-              height={10}
-              rounded="full"
-            />
-            <Text
-              fontFamily={fonts.primary[700]}
-              color={colors.black}
-              fontSize={16}
-            >
-              Nama
-            </Text>
-          </HStack>
-          <HStack space={4} justifyContent="flex-end" alignItems="center">
-            <TouchableOpacity onPress={() => navigation.navigate('SearchPage')}>
-              <SearchBlack />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Notification />
-            </TouchableOpacity>
-          </HStack>
-        </HStack>
-      </Box>
+      <Header navigation={navigation} isProfile title="Nama" />
       <ScrollView width="full" showsVerticalScrollIndicator={false}>
         <Box px={4} mt={2} mb={4}>
           <Text
@@ -213,6 +187,7 @@ const Beranda = ({ navigation }) => {
           </TouchableOpacity>
         </HStack>
         <VStack mb={4} px={4} space={5}>
+          <CardPekerjaan />
           <CardPekerjaan />
           <CardPekerjaan />
           <CardPekerjaan />
