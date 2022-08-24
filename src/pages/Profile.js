@@ -5,7 +5,7 @@ import { Header } from '../components';
 const Profile = ({ navigation }) => {
   return (
     <>
-      <Header navigation={navigation} title="Profile" />
+      <Header navigation={navigation} isProfile title="Profile" />
     </>
   );
 };

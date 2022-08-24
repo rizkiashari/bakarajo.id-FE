@@ -1,11 +1,17 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { Box, HStack, IconButton, Input, Text } from 'native-base';
-import { BackIcon, Notification, SearchBlack, SearchGrey } from '../../assets';
+import {
+  BackIcon,
+  Notification,
+  SearchBlack,
+  SearchGrey,
+  SettingsIcon,
+} from '../../assets';
 import { colors } from '../../utils/colors';
 import { fonts } from '../../utils/fonts';
 
-const Header = ({ navigation, type, isProfile, title }) => {
+const Header = ({ navigation, type, isPhoto, title, isProfile }) => {
   if (type === 'search') {
     return (
       <Box safeAreaTop bgColor={colors.white} width="full" px="16px" py="12px">
@@ -41,7 +47,7 @@ const Header = ({ navigation, type, isProfile, title }) => {
     <Box safeAreaTop bgColor={colors.white} width="full" px="16px" py="12px">
       <HStack justifyContent="space-between" alignItems="center">
         <HStack space={4} alignItems="center" width="2/3">
-          {isProfile && (
+          {isPhoto && (
             <Box
               bgColor={colors.gray[655]}
               width={10}
@@ -57,13 +63,23 @@ const Header = ({ navigation, type, isProfile, title }) => {
             {title}
           </Text>
         </HStack>
-        <HStack space={4} justifyContent="flex-end" alignItems="center">
-          <TouchableOpacity onPress={() => navigation.navigate('SearchPage')}>
-            <SearchBlack />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Notification />
-          </TouchableOpacity>
+        <HStack>
+          {isProfile ? (
+            <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+              <SettingsIcon />
+            </TouchableOpacity>
+          ) : (
+            <HStack space={4} justifyContent="flex-end" alignItems="center">
+              <TouchableOpacity
+                onPress={() => navigation.navigate('SearchPage')}
+              >
+                <SearchBlack />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Notification />
+              </TouchableOpacity>
+            </HStack>
+          )}
         </HStack>
       </HStack>
     </Box>

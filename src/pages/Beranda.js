@@ -11,7 +11,7 @@ const Beranda = ({ navigation }) => {
 
   return (
     <>
-      <Header navigation={navigation} isProfile title="Nama" />
+      <Header navigation={navigation} isPhoto title="Nama" />
       <ScrollView width="full" showsVerticalScrollIndicator={false}>
         <Box px={4} mt={2} mb={4}>
           <Text

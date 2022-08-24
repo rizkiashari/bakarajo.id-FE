@@ -14,6 +14,7 @@ import SearchGrey from './icon/icon_search_grey.svg';
 import Notification from './icon/icon_notif.svg';
 import SavedIcon from './icon/icon_save.svg';
 import BackIcon from './icon/icon_back.svg';
+import SettingsIcon from './icon/icon_settings.svg';
 
 // ILustration
 
@@ -33,4 +34,5 @@ export {
   SavedIcon,
   BackIcon,
   SearchGrey,
+  SettingsIcon,
 };
