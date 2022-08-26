@@ -1,6 +1,6 @@
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import React from 'react';
-import { Box, HStack, VStack } from 'native-base';
+import { Box, HStack, VStack, Text } from 'native-base';
 import { colors } from '../../utils/colors';
 import { fonts } from '../../utils/fonts';
 import { SavedIcon } from '../../assets';
@@ -18,6 +18,7 @@ const CardPekerjaan = () => {
                   fontFamily={fonts.primary[600]}
                   color={colors.primary}
                   fontSize={16}
+                  fontWeight={700}
                 >
                   Jenis Pekerjaan
                 </Text>
