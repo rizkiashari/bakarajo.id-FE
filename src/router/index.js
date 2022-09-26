@@ -45,7 +45,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Masuk">
       <Stack.Screen
         name="MainApp"
         component={MainApp}

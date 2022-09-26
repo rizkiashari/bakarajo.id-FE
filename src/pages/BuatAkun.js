@@ -166,9 +166,9 @@ const BuatAkun = () => {
                 space={5}
                 alignItems="center"
                 justifyContent="center"
-                width="full"
+                w="100%"
               >
-                <TouchableOpacity style={styles.btnSignUp}>
+                <TouchableOpacity style={styles.btnSignUp(dimensiWidth)}>
                   <Text
                     fontFamily={fonts.primary[700]}
                     color={colors.white}
@@ -194,7 +194,7 @@ const BuatAkun = () => {
                   </Text>
                   <Divider bg={colors.gray[150]} thickness="4" width="1/3" />
                 </HStack>
-                <TouchableOpacity style={styles.btnSignIn}>
+                <TouchableOpacity style={styles.btnSignIn(dimensiWidth)}>
                   <Text
                     fontFamily={fonts.primary[700]}
                     color={colors.black}
@@ -221,19 +221,19 @@ const styles = StyleSheet.create({
     right: 12,
     top: 15,
   },
-  btnSignIn: {
-    width: '100%',
+  btnSignIn: (dimensiWidth) => ({
+    width: dimensiWidth / 1.2,
     borderColor: colors.black,
     borderWidth: 1,
     borderRadius: 8,
     paddingVertical: 8,
-  },
-  btnSignUp: {
-    width: '100%',
+  }),
+  btnSignUp: (dimensiWidth) => ({
+    flex: 1 / 2,
+    width: dimensiWidth / 1.2,
     backgroundColor: colors.black,
-
     borderWidth: 1,
     borderRadius: 8,
     paddingVertical: 8,
-  },
+  }),
 });
